@@ -1,3 +1,35 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Múltiplos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item class="light-purple">
+    <ion-label position="floating">Ingresa un número</ion-label>
+    <ion-input [(ngModel)]="userNumber" type="number" placeholder="Número"></ion-input>
+  </ion-item>
+
+  <!-- El botón se desactiva hasta que se ingrese un número -->
+  <ion-button expand="full" (click)="findMultiples()" [disabled]="!userNumber">Generar Múltiplos</ion-button>
+
+  <!-- Spinner de carga -->
+  <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+
+  <!-- Contenedor con Scroll solo para la lista -->
+  <ion-list class="scrollable-list">
+    <ion-item *ngFor="let number of numbers">
+      <ion-label [style.color]="getColor(number)">
+        {{ number }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title size="small">© 2024 Múltiplos App</ion-title>
+  </ion-toolbar>
+</ion-footer>

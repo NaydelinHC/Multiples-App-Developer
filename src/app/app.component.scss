@@ -1,0 +1,27 @@
+ion-header, ion-footer {
+  --background: #6a0dad; /* Morado */
+  --color: #fff;
+}
+
+ion-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ocupa todo el alto disponible de la pantalla */
+}
+
+.scrollable-list {
+  height: 75%;      /* Define un alto fijo para la lista (ajústalo según necesites) */
+  overflow-y: auto; /* Activa el scroll si el contenido excede la altura */
+  padding: 0;
+  margin: 0;
+}
+
+ion-button {
+  --background: #6a0dad; /* Morado */
+  --color: #fff;
+}
+
+.light-purple {
+  --background: #d3b3e5; /* Morado más claro */
+  --color: #6a0dad; /* Texto morado */
+}
